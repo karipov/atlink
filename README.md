@@ -1,2 +1,2 @@
 # atlink
-A telegram bot that turns @ links into instagram links both in private chats and groups
+A telegram bot that turns @usernames into Instagram links both in private chats and groups

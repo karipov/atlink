@@ -1,7 +1,5 @@
 import time
 import telebot
-import requests
-from bs4 import BeautifulSoup
 import config # file with the key
 
 
@@ -12,16 +10,6 @@ def findat(msg):
     for i in msg:
         if '@' in i:
             return i
-
-def check_if_active(url):
-    page = requests.get(url)
-    soup = BeautifulSoup(page.text, 'html.parser')
-
-    if 'Page Not Found' in soup.title.text:
-        # soup.title.text gives the text of the <title> tag
-        return False
-    else:
-        return True
 
 @bot.message_handler(commands=['start']) # welcome message handler
 def send_welcome(message):
@@ -40,12 +28,8 @@ def at_converter(message):
     if at_text == '@': # in case it's just the '@', skip
         pass
     else:
-        insta_link = "https://instagram.com/{}".format(at_text[1:])
-        if check_if_active(insta_link) == True:
-            # the funcion should return True if the account on the link exists
-            bot.reply_to(message, insta_link)
-        else:
-            pass
+        insta_link = "https://instagram.com/{}".format(at_text[1:]))
+        bot.reply_to(message, insta_link)
 
 while True:
     try:

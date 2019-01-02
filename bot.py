@@ -28,7 +28,7 @@ def at_converter(message):
     if at_text == '@': # in case it's just the '@', skip
         pass
     else:
-        insta_link = "https://instagram.com/{}".format(at_text[1:]))
+        insta_link = "https://instagram.com/{}".format(at_text[1:])
         bot.reply_to(message, insta_link)
 
 while True:

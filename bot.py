@@ -1,9 +1,8 @@
 import time
 import telebot
-import config # file with the key
 
-
-bot = telebot.TeleBot(token=config.token)
+bot_token = "your bot token here"
+bot = telebot.TeleBot(token=bot_token)
 
 def findat(msg):
     # from a list of texts, it finds the one with the '@' sign
